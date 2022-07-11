@@ -1,0 +1,33 @@
+{
+  "name": "joiselda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khenay/JoIsElDa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Khenay/JoIsElDa/issues"
+  },
+  "homepage": "https://github.com/Khenay/JoIsElDa#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "chromedriver": "^103.0.0",
+    "express": "^4.18.1",
+    "geckodriver": "^3.0.2",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.4",
+    "nodemon": "^2.0.19",
+    "selenium-webdriver": "^4.3.1"
+  }
+}
