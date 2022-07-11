@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import { Routes, Route } from "react-router-dom";
-import Nabvar from '../components/navbar/Navbar'
+import NavBar from '../components/navbar/Navbar'
 import Home from '../components/home/Home'
 import Footer from '../components/footer/Footer'
-
-
+import Login from "../components/login/Login";
 
 
 const Main = () => {
 
-
     return (
         <div>
             <Routes>
-                <Nabvar />
-                <Home />
-                <Footer />
+                <Route path="/" element={<NavBar />}/>
+                <Route path="/login" element={<Login />}/>
+                {/* <Home />
+                <Footer /> */}
             </Routes>
 
         </div>

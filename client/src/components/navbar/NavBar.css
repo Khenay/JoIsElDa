@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    background: linear-gradient(90deg, #9e0000 0%, #bd7102 49%, #ffe630 100%);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3rem;
+    font-size: 1.5rem;
+}
+
+.linkNav {
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    color: black;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    margin-top: 0rem;
+    gap: 1.5rem;
+}
