@@ -8,6 +8,10 @@ mongoose.connect(connection)
 })
 .catch(() => {
     console.error(err);
+
 })
 
 module.exports = mongoose;
+
+})
+
