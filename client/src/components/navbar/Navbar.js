@@ -9,7 +9,7 @@ const NavBar = () => {
                 </header>
                 <nav>
                     <Link className="linkNav" to={"/registro"}>Registro</Link>
-                    <Link className="linkNav" to={"/login"}>Crear cuenta</Link>
+                    <Link className="linkNav" to={"/login"}>Inicar sesión</Link>
                     {/* <Link className="linkNav" to={"#"}>Salir</Link> */}
                 </nav>
             </div>
