@@ -16,7 +16,6 @@ const Main = () => {
                 {/* <Home />
                 <Footer /> */}
             </Routes>
-
         </div>
 
     );
