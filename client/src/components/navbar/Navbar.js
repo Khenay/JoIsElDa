@@ -5,10 +5,10 @@ const NavBar = () => {
         <div>
             <div className="navBar">
                 <header>
-                    <h2>Guayota</h2>
+                    <Link className="linkGuay" to={"/"}>Guayota</Link>
                 </header>
                 <nav>
-                    <Link className="linkNav" to={"#"}>Registro</Link>
+                    <Link className="linkNav" to={"/registro"}>Registro</Link>
                     <Link className="linkNav" to={"/login"}>Crear cuenta</Link>
                     {/* <Link className="linkNav" to={"#"}>Salir</Link> */}
                 </nav>

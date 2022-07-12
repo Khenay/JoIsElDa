@@ -37,3 +37,9 @@ nav {
     margin-top: 0rem;
     gap: 1.5rem;
 }
+
+.linkGuay{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
