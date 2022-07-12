@@ -46,17 +46,6 @@ const Competiciones = () => {
                 setPrecio(res.message[0].precio);
                 setParticipantes(res.message[0].participantesMax);
 
-
-                setNombreCiclismo(res.message[1].nombre);
-                setTipoCiclismo(res.message[1].tipo);
-                setDescripcionCiclismo(res.message[1].descripcion);
-                setLugarCiclismo(res.message[1].lugar);
-                setubicacionCiclismo(res.message[1].ubicacion);
-                setFechaCiclismo(res.message[1].fecha);
-                setHoraCiclismo(res.message[1].hora);
-                setPrecioCiclismo(res.message[1].precio);
-                setParticipantesCiclismo(res.message[1].participantesMax);
-
                 setNombreCiclismo(res.message[1].nombre);
                 setTipoCiclismo(res.message[1].tipo);
                 setDescripcionCiclismo(res.message[1].descripcion);
