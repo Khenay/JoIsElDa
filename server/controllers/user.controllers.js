@@ -31,8 +31,6 @@ const user = {
                 } else {
                     res.json({message: "No hay nada en la BD", satus: false});
                 }
-            
-                
                 //db.close();
             });
         });
