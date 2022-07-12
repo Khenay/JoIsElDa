@@ -6,6 +6,10 @@ import './index.css';
 import './components/navbar/NavBar.css';
 import './components/login/Login.css';
 
+import './components/footer/footer.css';
+import './components/registro/registro.css';
+
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
