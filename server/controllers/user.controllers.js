@@ -34,6 +34,23 @@ const user = {
                 //db.close();
             });
         });
+    }, 
+    actualizar: (req, res) => {
+        const actualizarEmail = req.body.actualizarEmail;
+        const actualizarPassword = req.body.actualizarPassword; 
+
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db(mydb);
+            var myquery = { "direccion": "C/Recoletos" };
+            var newvalues = { $set: { "direccion": "C/Serrano" } };
+            dbo.collection(coleccion).updateOne(myquery, newvalues, function (err, res) {
+                if (err) throw err;
+                console.log("Documento actualizado");
+                db.close();
+            });
+        });
+
     }
 };
 

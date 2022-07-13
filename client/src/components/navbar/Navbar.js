@@ -10,6 +10,7 @@ const NavBar = () => {
                 <nav>
                     <Link className="linkNav" to={"/registro"}>Registro</Link>
                     <Link className="linkNav" to={"/login"}>Iniciar sesión</Link>
+                    <Link className="linkNav" to={"/cuenta"}>Cuenta</Link>
                     {/* <Link className="linkNav" to={"#"}>Salir</Link> */}
                 </nav>
             </div>
