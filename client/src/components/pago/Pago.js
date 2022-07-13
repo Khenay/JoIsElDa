@@ -22,7 +22,7 @@ const Pago = () => {
                         <input id="cvv" placeholder="111"/>
                     </div>
                     <div className="boton">
-                        <button className="btn">Pagar</button>
+                        <button className="btn">pagar</button>
                     </div>
                 </div>
             </div>
