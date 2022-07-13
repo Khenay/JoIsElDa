@@ -1,25 +1,21 @@
-.container {
+.containerActualizar {
     height: 80vh;
-    background-color: #fafafa;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.cardLog {
+.cardActualizar {
     background: linear-gradient(90deg, #9e0000 0%, #bd7102 49%, #ffe630 100%);
-    padding: 2rem;
-    border-style: none;
-    border-radius: 1rem;
-    width: 20rem;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-.logIn {
+    border-radius: 1rem;
+    height: 23rem;
+    width: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    align-items: center;
 }
 
 input {
@@ -27,10 +23,10 @@ input {
     border-radius: .5rem;
     border-style: none;
     font-size: 1.5rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
-.btn {
+.btnActualizar {
     border-radius: 1rem;
     border-style: none;
     width: 7rem;
@@ -38,12 +34,5 @@ input {
     margin: 0 auto;
     padding: .5rem;
     background-color: white;
-}
-
-.linkLog {
-    text-decoration: none;
-    text-align: center;
-    letter-spacing: 2px;
-    margin: 0 auto;
-    cursor: pointer;
+    margin-bottom: 1rem;
 }

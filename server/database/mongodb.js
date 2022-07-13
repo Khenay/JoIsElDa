@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const connection = 'mongodb://localhost:27017/juegoRol3'
+const connection = `mongodb://127.0.0.1:27017/juegoRol3`;
 
 mongoose.connect(connection)
 .then(() => {
@@ -12,6 +12,3 @@ mongoose.connect(connection)
 })
 
 module.exports = mongoose;
-
-
-
