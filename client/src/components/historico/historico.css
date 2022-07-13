@@ -5,6 +5,12 @@ h1{
     margin-bottom: 3rem;
 }
 
+#paginado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .cont{
     display: flex;
     justify-content: space-evenly;
