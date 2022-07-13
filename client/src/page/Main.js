@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import Home from '../components/home/Home'
 import Footer from '../components/footer/Footer'
 import Login from "../components/login/Login";
+import PaginatedItems from '../components/paginado/Paginado'
 import Registro from "../components/registro/Registro";
 import Competiciones from "../components/competiciones/Competiciones";
 import Actualizar from "../components/actualizarDatos/Actualizar";
+
 
 
 const Main = () => {
@@ -18,10 +20,12 @@ const Main = () => {
             <NavBar /> 
             <Routes>
                 <Route path="/login" element={<Login />}/>
+
                 <Route path="/registro" element={<Registro />}/>
                 <Route path="/" element={<Competiciones />}/>
                 <Route path="/cuenta" element={<Actualizar />}/>
                 {/* <Route path="/as" element={<Footer />}/>  */}
+
             </Routes>
             <Footer />
         </div>

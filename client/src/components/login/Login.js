@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import NavBar from '../navbar/Navbar'
+import PaginatedItems from '../paginado/Paginado'
+
 
 const Login = () => {
 
@@ -25,8 +28,12 @@ const Login = () => {
         })
 
     return (
+
         <div>
+            <NavBar />
+            <PaginatedItems />
             <div class='container'>
+                <div id="container"></div>
                 <div class='cardLog'>
                     <div class='logIn'>
                         <input type='email' placeholder='email' onChange={(e) => setNick(e.target.value)} />
@@ -37,6 +44,10 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+
+            <PaginatedItems itemsPerPage={3} />
+
+
         </div>
     );
 }
