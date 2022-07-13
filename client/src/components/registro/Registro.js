@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 const Registro = () => {
 
@@ -9,28 +9,35 @@ const Registro = () => {
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
 
-    const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json"},
-        body: JSON.stringify({
-            signName: name,
-            signLastName: lastName,
-            signMail: mail,
-            signNich: nick,
-            signPassword: password
-        })
+    const sendData = () => {
+
+        const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                signName: name,
+                signLastName: lastName,
+                signMail: mail,
+                signNich: nick,
+                signPassword: password
+            })
+        };
+
+        fetch("register", requestOptions)
+            .then((response) => response.json)
+            .then((res) => {
+                if (res.status) {
+                    setMessage(res.message);
+                } else {
+                    setMessage(res.message);
+                }
+            })
+
+
     };
 
-    fetch("registro", requestOptions)
-        .then((response) => response.json)
-        .then((res) => {
-            if(res.status){
-                setMessage(res.message);
-            } else {
-                setMessage(res.message);
-            }
-        })
-    return(
+
+    return (
         <div>
             <div className="container">
                 <div className="cardLog">
@@ -40,7 +47,8 @@ const Registro = () => {
                         <input type='mail' placeholder='Introduce tu email' onChange={(e) => setMail(e.target.value)} />
                         <input type='text' placeholder='Introduce tu nombre de usuario' onChange={(e) => setNick(e.target.value)} />
                         <input type='password' placeholder='Introduce tu contraseña' onChange={(e) => setPassword(e.target.value)} />
-                        <button class='btn'>Iniciar sesión</button>
+                        <button class='btn' onClick={() => sendData()}>Registrarse</button>
+                        
                     </div>
                 </div>
             </div>
