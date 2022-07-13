@@ -7,24 +7,46 @@ const Actualizar = () => {
     const [nuevoEmail, setNuevoEmail] = useState("");
     const [nuevaPassword, setNuevaPassword] = useState("");
 
-    const actualizarDatos = () => {
+    const [messageEmail, setMessageEmail] = useState("");
+    const [messagePass, setMessagePass] = useState("");
+
+    const updateEmail = () => {
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ actualizarEmail: nuevoEmail, actualizarPassword: nuevaPassword }),
+            body: JSON.stringify({ emailAntiguo: email, actualizarEmail: nuevoEmail}),
         };
 
-        fetch("actualizar", requestOptions)
+        fetch("actualizarEmail", requestOptions)
             .then((response) => response.json())
             .then((res) => {
-                // if (res.status) {
-                //     setMessage(res.message);
-                //     //localStorage.setItem("idLoggedUser", JSON.stringify(res.id))
-                // } else {
-                //     setMessage(res.message);
-                // }
+                if (res.status) {
+                    setMessageEmail(res.message);
+                } else {
+                    setMessageEmail(res.message);
+                }
             })
     }
+
+    const updatePass = () => {
+        const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ passwordAntigua:password, actualizarPassword: nuevaPassword }),
+        };
+
+        fetch("actualizarPassword", requestOptions)
+            .then((response) => response.json())
+            .then((res) => {
+                if (res.status) {
+                    setMessagePass(res.message);
+                    //localStorage.setItem("idLoggedUser", JSON.stringify(res.id))
+                } else {
+                    setMessagePass(res.message);
+                }
+            });
+
+    };
 
     //funcion con fetch al endpoint del crud para poner en los botones
 
@@ -34,12 +56,14 @@ const Actualizar = () => {
             <div className="containerActualizar">
                 <div>Historial</div>
                 <div className="cardActualizar">
-                    <input type='email' placeholder="email"></input>
-                    <input type='email' placeholder="nuevo email"></input>
-                    <button className="btnActualizar">Actualizar</button>
-                    <input placeholder="contraseña"></input>
-                    <input placeholder="nueva contraseña"></input>
-                    <button className="btnActualizar">Actualizar</button>
+                    {messageEmail}
+                    <input type='email' placeholder="email" onChange={(e) => setEmail(e.target.value)}></input>
+                    <input type='email' placeholder="nuevo email" onChange={(e) => setNuevoEmail(e.target.value)}></input>
+                    <button className="btnActualizar" onClick={() => updateEmail()}>Actualizar</button>
+                    {messagePass}
+                    <input placeholder="contraseña" onChange={(e) => setPassword(e.target.value)}></input>
+                    <input placeholder="nueva contraseña" onChange={(e) => setNuevaPassword(e.target.value)}></input>
+                    <button className="btnActualizar" onClick={() => updatePass()}>Actualizar</button>
                 </div>
 
             </div>
