@@ -4,7 +4,7 @@ const Pago = () => {
 
     const [data, setData] = useState('');
     const [message, setMessage] = useState('');
-
+    
     const [titTarjeta, setTitular] = useState("");
     const [numeroTarj, setNumero] = useState("");
     const [cadTarjeta, setCaducidad] = useState("");

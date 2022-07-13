@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+
 import './index.css';
 
 import './components/navbar/NavBar.css';
@@ -12,16 +13,16 @@ import './components/historico/historico.css';
 import './components/paginado/Paginado.css';
 import './components/competiciones/Competiciones.css'
 import './components/actualizarDatos/Actualizar.css'
-
+// import './components/logout/logout.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
