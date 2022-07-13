@@ -24,7 +24,7 @@ const user = {
                 ;
                 if (result != null && result.pass == pass) {
                     res.json({
-                        message: 'Logeado correctamente'
+                        message: 'Logeado correctamente', result
                     });
 
                 } else {

@@ -28,13 +28,13 @@ function Items({ currentItems }) {
         localStorage.setItem('fecha0', res.message[0].fecha);
         localStorage.setItem('hora0', res.message[0].hora);
         localStorage.setItem('descripcion0', res.message[0].descripcion);
-        localStorage.setItem('direccion0', res.message[0].direccion);
+        localStorage.setItem('direccion0', res.message[0].ubicacion);
         localStorage.setItem('tipo0', res.message[0].tipo);
 
         localStorage.setItem('fecha1', res.message[1].fecha);
         localStorage.setItem('hora1', res.message[1].hora);
         localStorage.setItem('descripcion1', res.message[1].descripcion);
-        localStorage.setItem('direccion1', res.message[1].direccion);
+        localStorage.setItem('direccion1', res.message[1].ubicacion);
         localStorage.setItem('tipo1', res.message[1].tipo);
         
         setDorsal(res.message[0].dorsal)

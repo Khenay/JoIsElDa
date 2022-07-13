@@ -11,6 +11,11 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const [usuario, setNombreUsuario] = useState("");
+
+    useEffect(() => {
+        setNombreUsuario(localStorage.getItem('nombre'));
+    },[])
 
     const login = () => {
 
@@ -27,7 +32,8 @@ const Login = () => {
                 if (res.message == 'Usuario o contraseña incorrectos') {
                     setMessage(res.message);
                 } else {
-                    navigate("/historico")
+                    localStorage.setItem("nombre", JSON.stringify(res.result.email))
+                    navigate("/")
                 }
 
                 //localStorage.setItem("idLoggedUser", JSON.stringify(res.id))
