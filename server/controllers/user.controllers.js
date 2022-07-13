@@ -14,16 +14,36 @@ const coleccion = "Competiciones";
 
 const user = {
     login: (req, res) => {
-        const loginNick = req.body.loginNick;
-        const loginPassword = req.body.loginPassword;
+        const email = req.body.email;
+        const pass = req.body.loginPassword;
+        
 
-        if (loginNick && loginPassword) {
-            //conectarme a la colección de usuarios y comprobar que
-            // está registrado.
-            res.json({ code: 200, message: "Usuario logueado", state: true });
-        } else {
-            res.json({ code: 400, message: "Usuario o contraseña incorrecta", state: false });
-        }
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db(mydb);
+
+            dbo.collection("Usuarios").findOne({ email: email }, function (err, result) {
+                if (err) throw err;
+                ;
+                if (result != null && result.pass == pass) {
+                    res.json({
+                        message: 'Logeado correctamente'
+                    });
+
+                } else {
+                    res.json({
+                        message: 'Usuario o contraseña incorrectos'
+                    });
+                }
+
+
+
+
+            });
+        });
+
+
+
     },
     competiciones: (req, res) => {
         MongoClient.connect(url, function (err, db) {
@@ -46,11 +66,11 @@ const user = {
     register: (req, res) => {
 
 
-        const userName = req.body.userName;
-        const pass = req.body.pass;
-        const nombre = req.body.nombre;
-        const apellidos = req.body.apellidos;
-        const email = req.body.email;
+        const userName = req.body.signNich;
+        const pass = req.body.signPassword;
+        const nombre = req.body.signName;
+        const apellidos = req.body.signLastName;
+        const email = req.body.signMail;
 
         const data = { "userName": userName, "pass": pass, "nombre": nombre, "apellidos": apellidos, "email": email };
         console.log(data)
@@ -83,7 +103,7 @@ const user = {
             });
         });
     },
-    
+
     inscripcion: (req, res) => {
 
         MongoClient.connect(url, function (err, db) {
