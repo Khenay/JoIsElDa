@@ -40,7 +40,7 @@ const Registro = () => {
                         <input type='mail' placeholder='Introduce tu email' onChange={(e) => setMail(e.target.value)} />
                         <input type='text' placeholder='Introduce tu nombre de usuario' onChange={(e) => setNick(e.target.value)} />
                         <input type='password' placeholder='Introduce tu contraseña' onChange={(e) => setPassword(e.target.value)} />
-                        <button class='btn'>Iniciar sesión</button>
+                        <button class='btnRegistro'>Iniciar sesión</button>
                     </div>
                 </div>
             </div>
