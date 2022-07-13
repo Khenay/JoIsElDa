@@ -7,6 +7,7 @@ function App() {
       {/* <Finance/> */}
       <BrowserRouter>
         <Main />
+        
       </BrowserRouter>
 
     </div>

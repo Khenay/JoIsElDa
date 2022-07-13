@@ -5,6 +5,7 @@ import './index.css';
 
 import './components/navbar/NavBar.css';
 import './components/login/Login.css';
+import './components/paginado/Paginado.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';

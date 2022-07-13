@@ -7,11 +7,11 @@ const router =require("./routes/routes")
 
 const app = express();
 
+app.use(express.json());
 app.use("/",router)
 
-app.use(express.json());
 
-app.use(require('./routes/routes'));
+
 
 const port = 5050;
 
