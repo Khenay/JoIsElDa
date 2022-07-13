@@ -26,9 +26,9 @@ const Login = () => {
 
     return (
         <div>
-            <div class='container'>
-                <div class='cardLog'>
-                    <div class='logIn'>
+            <div className='container'>
+                <div className='cardLog'>
+                    <div className='logIn'>
                         <input type='email' placeholder='email' onChange={(e) => setNick(e.target.value)} />
                         <input type='password' placeholder='contraseña' onChange={(e) => setPassword(e.target.value)} />
                         <button class='btn'>Iniciar sesión</button>

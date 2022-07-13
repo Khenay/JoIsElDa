@@ -34,8 +34,9 @@ const user = {
                 }
                 //db.close();
             });
-            },
-            register: (req, res) => {
+            })
+    },
+    register: (req, res) => {
 
 
         const userName = req.body.userName;
@@ -58,11 +59,6 @@ const user = {
 
         });
     }
-
-
-
-
-
-
+}
 module.exports = user;
 

@@ -5,9 +5,10 @@ import './index.css';
 
 import './components/navbar/NavBar.css';
 import './components/login/Login.css';
-
+import './components/pago/pago.css';
 import './components/footer/footer.css';
 import './components/registro/registro.css';
+import './components/historico/historico.css';
 
 
 import App from './App';
