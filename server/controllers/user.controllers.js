@@ -1,15 +1,12 @@
 require('express');
 const mongo = require('mongodb');
-const url = "mongodb://localhost:27017/";
+const url = 'mongodb://127.0.0.1:27017/juegoRol3';
+//si teneis windows cambiad la url
 const MongoClient = mongo.MongoClient;
 const mydb = "juegoRol3";
 var dorsal = 0;
-
-
-
-
 const coleccion = "Competiciones";
-//const url = 'mongodb://127.0.0.1:27017/juegoRol3';
+
 
 
 const user = {
@@ -36,9 +33,6 @@ const user = {
                     });
                 }
 
-
-
-
             });
         });
 
@@ -52,8 +46,7 @@ const user = {
             //var query = { "lugar": "Tenerife" };
             dbo.collection(coleccion).find().toArray(function (err, result) {
                 if (err) throw err;
-                //res.send(result)
-                console.log(result);
+                //console.log(result);
                 if (result) {
                     res.json({ message: result, satus: true });
                 } else {
@@ -65,7 +58,6 @@ const user = {
     },
     register: (req, res) => {
 
-
         const userName = req.body.signNich;
         const pass = req.body.signPassword;
         const nombre = req.body.signName;
@@ -75,33 +67,65 @@ const user = {
         const data = { "userName": userName, "pass": pass, "nombre": nombre, "apellidos": apellidos, "email": email };
         console.log(data)
 
+        // if (!userName || !pass || !nombre || !apellidos || !email) {
+        //     res.json({message: "Todos los campos son obligatorios", status: false});
+        // } else  {
+            MongoClient.connect(url, function (err, db) {
+                if (err) throw err;
+                var dbo = db.db(mydb);
+                dbo.collection("Usuarios").insertOne(data, function (err, result) {
+                    if (err) throw err;
+                    res.json({status: true});
+                    console.log('usuario insertado');
+                });
+            });
+        //}  
+    },
+
+    actualizarEmail: (req, res) => {
+        const emailAntiguo = req.body.emailAntiguo;
+        const actualizarEmail = req.body.actualizarEmail;
+
         MongoClient.connect(url, function (err, db) {
             if (err) throw err;
             var dbo = db.db(mydb);
-            dbo.collection("Usuarios").insertOne(data, function (err, result) {
+            var myquery = { "email": emailAntiguo };
+            var newvalues = { $set: { "email": actualizarEmail } };
+            dbo.collection("Usuarios").updateOne(myquery, newvalues, function (err, res) {
                 if (err) throw err;
-                console.log('usuario insertado')
-                    ;
-            })
+                console.log("Email actualizado");
+                //db.close();
+            });
 
         });
-    },
 
-    actualizar: (req, res) => {
-        const actualizarEmail = req.body.actualizarEmail;
+        if (!emailAntiguo || !actualizarEmail) {
+            res.json({ message: "Datos incorrectos", status: false });
+        } else {
+            res.json({ message: "Email actualizado", status: true });
+        }
+    },
+    actualizarPassword: (req, res) => {
+        const passwordAntigua = req.body.passwordAntigua;
         const actualizarPassword = req.body.actualizarPassword;
 
         MongoClient.connect(url, function (err, db) {
             if (err) throw err;
             var dbo = db.db(mydb);
-            var myquery = { "direccion": "C/Recoletos" };
-            var newvalues = { $set: { "direccion": "C/Serrano" } };
-            dbo.collection(coleccion).updateOne(myquery, newvalues, function (err, res) {
+            var myquery = { "pass": passwordAntigua };
+            var newvalues = { $set: { "pass": actualizarPassword } };
+            dbo.collection("Usuarios").updateOne(myquery, newvalues, function (err, res) {
                 if (err) throw err;
-                console.log("Documento actualizado");
-                db.close();
+                console.log("Contraseña actualizada");
+                //db.close();
             });
         });
+
+        if (!passwordAntigua || !actualizarPassword) {
+            res.json({ message: "Datos incorrectos", status: false });
+        } else {
+            res.json({ message: "Contraseña actualizada", status: true });
+        }
     },
 
     inscripcion: (req, res) => {
@@ -112,7 +136,6 @@ const user = {
 
             dbo.collection("Usuarios").findOne({ email: req.body.email }, function (err, result) {
                 if (err) throw err;
-                ;
 
 
                 const data1 = { "usuario": result._id.valueOf(), "competicion": req.body.competicion, "dorsal": dorsal + 1, "tarjeta": req.body.tarjeta };
@@ -147,6 +170,37 @@ const user = {
             });
         });
     },
+    id: (req, res) => {
+        // const id = req.body.id;
+        // console.log(id)
+
+        // MongoClient.connect(url, function (err, db) {
+        //     if (err) throw err;
+        //     var dbo = db.db(mydb);
+        //     var query = { _id: mongo.ObjectId(id) };
+        //     dbo.collection(coleccion).find(query).toArray(function (err, result) {
+        //         if (err) throw err;
+        //         console.log(result);
+        //         res.json({result});
+        //         db.close();
+        //     });
+        // });
+
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db(mydb);
+            var query = { "nombre": "Campeonato mundial de Windsurf" };
+            dbo.collection(coleccion).find(query).toArray(function (err, result) {
+                if (err) throw err;
+                console.log(result);
+                res.json({result});
+                db.close();
+            });
+        });
+
+
+
+    }
 };
 
 module.exports = user;

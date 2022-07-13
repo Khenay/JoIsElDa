@@ -2,11 +2,13 @@ const router = require("express").Router();
 const user = require("../controllers/user.controllers");
 
 
-router.post("/register",user.register);
+router.post("/registro",user.register);
 router.post("/inscripcion",user.inscripcion);
 router.post("/login",user.login);
 router.get("/competiciones",user.competiciones);
-router.post("/actualizar",user.actualizar);
+router.post("/actualizarEmail",user.actualizarEmail);
+router.post("/actualizarPassword",user.actualizarPassword);
+router.get("/id", user.id);
 
 
 

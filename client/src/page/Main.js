@@ -27,6 +27,7 @@ const Main = () => {
                 <Route path="/pago" element={<Pago />}/>
                 <Route path="/historico" element={<Historico />}/>
                 <Route path="/cuenta" element={<Actualizar />}/>
+                <Route path='/paginado' element={<PaginatedItems />}/>
                 {/* <Route path="/as" element={<Footer />}/>  */}
             </Routes>
             <Footer />
