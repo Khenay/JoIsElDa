@@ -12,9 +12,3 @@ mongoose.connect(connection)
 })
 
 module.exports = mongoose;
-
-
-
-
-
-

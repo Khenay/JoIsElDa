@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import NavBar from '../navbar/Navbar'
+// import PaginatedItems from '../paginado/Paginado'
+
 
 const Login = () => {
 
@@ -25,6 +28,7 @@ const Login = () => {
         })
 
     return (
+
         <div>
             <div className='container'>
                 <div className='cardLog'>
