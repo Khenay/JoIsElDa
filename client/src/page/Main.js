@@ -12,6 +12,7 @@ import Competiciones from "../components/competiciones/Competiciones";
 import Pago from "../components/pago/Pago";
 import Historico from "../components/historico/Historico";
 import Actualizar from "../components/actualizarDatos/Actualizar";
+import Logout from "../components/logout/Logout";
 
 
 const Main = () => {
@@ -21,12 +22,13 @@ const Main = () => {
             <NavBar /> 
             <Routes>
                 <Route path="/login" element={<Login />}/>
-
                 <Route path="/registro" element={<Registro />}/>
                 <Route path="/" element={<Competiciones />}/>
                 <Route path="/pago" element={<Pago />}/>
                 <Route path="/historico" element={<Historico />}/>
                 <Route path="/cuenta" element={<Actualizar />}/>
+                <Route path='/paginado' element={<PaginatedItems />}/>
+                <Route path="/logout" element={<Logout />}/>
                 {/* <Route path="/as" element={<Footer />}/>  */}
             </Routes>
             <Footer />

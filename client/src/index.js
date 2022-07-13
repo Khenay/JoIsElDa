@@ -12,7 +12,7 @@ import './components/historico/historico.css';
 import './components/paginado/Paginado.css';
 import './components/competiciones/Competiciones.css'
 import './components/actualizarDatos/Actualizar.css'
-
+import './components/logout/logout.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
