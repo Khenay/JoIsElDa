@@ -9,8 +9,9 @@ import Login from "../components/login/Login";
 import PaginatedItems from '../components/paginado/Paginado'
 import Registro from "../components/registro/Registro";
 import Competiciones from "../components/competiciones/Competiciones";
+import Pago from "../components/pago/Pago";
+import Historico from "../components/historico/Historico";
 import Actualizar from "../components/actualizarDatos/Actualizar";
-
 
 
 const Main = () => {
@@ -23,9 +24,10 @@ const Main = () => {
 
                 <Route path="/registro" element={<Registro />}/>
                 <Route path="/" element={<Competiciones />}/>
+                <Route path="/pago" element={<Pago />}/>
+                <Route path="/historico" element={<Historico />}/>
                 <Route path="/cuenta" element={<Actualizar />}/>
                 {/* <Route path="/as" element={<Footer />}/>  */}
-
             </Routes>
             <Footer />
         </div>

@@ -5,10 +5,11 @@ import './index.css';
 
 import './components/navbar/NavBar.css';
 import './components/login/Login.css';
-import './components/paginado/Paginado.css';
-
+import './components/pago/pago.css';
 import './components/footer/footer.css';
 import './components/registro/registro.css';
+import './components/historico/historico.css';
+import './components/paginado/Paginado.css';
 import './components/competiciones/Competiciones.css'
 import './components/actualizarDatos/Actualizar.css'
 
