@@ -28,8 +28,7 @@ const user = {
             //var query = { "lugar": "Tenerife" };
             dbo.collection(coleccion).find().toArray(function (err, result) {
                 if (err) throw err;
-                //res.send(result)
-                console.log(result);
+                //console.log(result);
                 if (result) {
                     res.json({ message: result, satus: true });
                 } else {
@@ -119,7 +118,6 @@ const user = {
 
             dbo.collection("Usuarios").findOne({ email: req.body.email }, function (err, result) {
                 if (err) throw err;
-                ;
 
 
                 const data1 = { "usuario": result._id.valueOf(), "competicion": req.body.competicion, "dorsal": dorsal + 1, "tarjeta": req.body.tarjeta };
@@ -154,6 +152,37 @@ const user = {
             });
         });
     },
+    id: (req, res) => {
+        // const id = req.body.id;
+        // console.log(id)
+
+        // MongoClient.connect(url, function (err, db) {
+        //     if (err) throw err;
+        //     var dbo = db.db(mydb);
+        //     var query = { _id: mongo.ObjectId(id) };
+        //     dbo.collection(coleccion).find(query).toArray(function (err, result) {
+        //         if (err) throw err;
+        //         console.log(result);
+        //         res.json({result});
+        //         db.close();
+        //     });
+        // });
+
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db(mydb);
+            var query = { "nombre": "Campeonato mundial de Windsurf" };
+            dbo.collection(coleccion).find(query).toArray(function (err, result) {
+                if (err) throw err;
+                console.log(result);
+                res.json({result});
+                db.close();
+            });
+        });
+
+
+
+    }
 };
 
 module.exports = user;

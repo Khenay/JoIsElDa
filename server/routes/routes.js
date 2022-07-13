@@ -8,6 +8,7 @@ router.post("/login",user.login);
 router.get("/competiciones",user.competiciones);
 router.post("/actualizarEmail",user.actualizarEmail);
 router.post("/actualizarPassword",user.actualizarPassword);
+router.get("/id", user.id);
 
 
 
