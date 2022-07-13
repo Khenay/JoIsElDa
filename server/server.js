@@ -3,18 +3,21 @@ const express = require('express');
 
 require('./database/mongodb');
 
-const router = require("./routes/routes");
+const router =require("./routes/routes")
 
 const app = express();
+
+app.use("/",router)
 
 app.use(express.json());
 app.use("/", router);
 //app.use(require('./routes/routes'));
 
-const PORT = process.env.PORT || 5050;
+const port = 5050;
 
-app.listen(PORT, () => {
-    console.log(
-      `Servidor corriendo en el puerto ${PORT}`
-    );
-});
+app.listen(port , console.log("Sevidor escuchando en puerto "+ port))
+
+
+
+
+
