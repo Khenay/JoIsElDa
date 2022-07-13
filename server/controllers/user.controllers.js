@@ -41,24 +41,28 @@ const user = {
     },
     register: (req, res) => {
 
-
-        const userName = req.body.userName;
-        const pass = req.body.pass;
-        const nombre = req.body.nombre;
-        const apellidos = req.body.apellidos;
-        const email = req.body.email;
+        const userName = req.body.signNich;
+        const pass = req.body.signPassword;
+        const nombre = req.body.signName;
+        const apellidos = req.body.signLastName;
+        const email = req.body.signMail;
 
         const data = { "userName": userName, "pass": pass, "nombre": nombre, "apellidos": apellidos, "email": email };
         console.log(data)
 
-        MongoClient.connect(url, function (err, db) {
-            if (err) throw err;
-            var dbo = db.db(mydb);
-            dbo.collection("Usuarios").insertOne(data, function (err, result) {
+        // if (!userName || !pass || !nombre || !apellidos || !email) {
+        //     res.json({message: "Todos los campos son obligatorios", status: false});
+        // } else  {
+            MongoClient.connect(url, function (err, db) {
                 if (err) throw err;
-                console.log('usuario insertado');
+                var dbo = db.db(mydb);
+                dbo.collection("Usuarios").insertOne(data, function (err, result) {
+                    if (err) throw err;
+                    res.json({status: true});
+                    console.log('usuario insertado');
+                });
             });
-        });
+        //}  
     },
 
     actualizarEmail: (req, res) => {
