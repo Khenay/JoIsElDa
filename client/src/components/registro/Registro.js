@@ -42,12 +42,12 @@ const Registro = () => {
             <div className="container">
                 <div className="cardLog">
                     <div className="sign">
-                        <input type='text' placeholder='Introduce tu nombre' onChange={(e) => setName(e.target.value)} />
-                        <input type='text' placeholder='Introduce tus apellidos' onChange={(e) => setLastName(e.target.value)} />
-                        <input type='mail' placeholder='Introduce tu email' onChange={(e) => setMail(e.target.value)} />
-                        <input type='text' placeholder='Introduce tu nombre de usuario' onChange={(e) => setNick(e.target.value)} />
-                        <input type='password' placeholder='Introduce tu contraseña' onChange={(e) => setPassword(e.target.value)} />
-                        <button class='btn' onClick={() => sendData()}>Registrarse</button>
+                        <input type='text' id="name" placeholder='Introduce tu nombre' onChange={(e) => setName(e.target.value)} />
+                        <input type='text' id="lastName" placeholder='Introduce tus apellidos' onChange={(e) => setLastName(e.target.value)} />
+                        <input type='mail' id="mail" placeholder='Introduce tu email' onChange={(e) => setMail(e.target.value)} />
+                        <input type='text' id="nick" placeholder='Introduce tu nombre de usuario' onChange={(e) => setNick(e.target.value)} />
+                        <input type='password' id="pass" placeholder='Introduce tu contraseña' onChange={(e) => setPassword(e.target.value)} />
+                        <button id="button" class='btn' onClick={() => sendData()}>Registrarse</button>
                         
                     </div>
                 </div>
