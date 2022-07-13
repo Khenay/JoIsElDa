@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 const emailExp = new RegExp(/^([\d\w_\.-]+)@([\d\w\.-]+)\.([\w\.]{3})$/);
 const nameExp = new RegExp(/^([A-Za-z]{1,15})$/);
 
+
 const Registro = () => {
 
     const navigate = useNavigate();

@@ -47,3 +47,11 @@ input {
     margin: 0 auto;
     cursor: pointer;
 }
+#mensajeMal{
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    cursor: pointer;
+    color: red;
+}

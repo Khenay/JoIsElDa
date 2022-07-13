@@ -1,6 +1,7 @@
 require('express');
 const mongo = require('mongodb');
 const url = 'mongodb://127.0.0.1:27017/juegoRol3';
+//si teneis windows cambiad la url
 const MongoClient = mongo.MongoClient;
 const mydb = "juegoRol3";
 var dorsal = 0;
@@ -10,16 +11,33 @@ const coleccion = "Competiciones";
 
 const user = {
     login: (req, res) => {
-        const loginNick = req.body.loginNick;
-        const loginPassword = req.body.loginPassword;
+        const email = req.body.email;
+        const pass = req.body.loginPassword;
+        
 
-        if (loginNick && loginPassword) {
-            //conectarme a la colección de usuarios y comprobar que
-            // está registrado.
-            res.json({ code: 200, message: "Usuario logueado", state: true });
-        } else {
-            res.json({ code: 400, message: "Usuario o contraseña incorrecta", state: false });
-        }
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db(mydb);
+
+            dbo.collection("Usuarios").findOne({ email: email }, function (err, result) {
+                if (err) throw err;
+                ;
+                if (result != null && result.pass == pass) {
+                    res.json({
+                        message: 'Logeado correctamente'
+                    });
+
+                } else {
+                    res.json({
+                        message: 'Usuario o contraseña incorrectos'
+                    });
+                }
+
+            });
+        });
+
+
+
     },
     competiciones: (req, res) => {
         MongoClient.connect(url, function (err, db) {
