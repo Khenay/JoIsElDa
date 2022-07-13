@@ -8,6 +8,7 @@ import Footer from '../components/footer/Footer'
 import Login from "../components/login/Login";
 import Registro from "../components/registro/Registro";
 import Competiciones from "../components/competiciones/Competiciones";
+import Actualizar from "../components/actualizarDatos/Actualizar";
 
 
 const Main = () => {
@@ -19,6 +20,7 @@ const Main = () => {
                 <Route path="/login" element={<Login />}/>
                 <Route path="/registro" element={<Registro />}/>
                 <Route path="/" element={<Competiciones />}/>
+                <Route path="/cuenta" element={<Actualizar />}/>
                 {/* <Route path="/as" element={<Footer />}/>  */}
             </Routes>
             <Footer />

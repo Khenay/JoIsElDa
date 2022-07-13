@@ -8,6 +8,8 @@ import './components/login/Login.css';
 
 import './components/footer/footer.css';
 import './components/registro/registro.css';
+import './components/competiciones/Competiciones.css'
+import './components/actualizarDatos/Actualizar.css'
 
 
 import App from './App';
