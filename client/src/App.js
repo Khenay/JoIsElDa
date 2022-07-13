@@ -25,7 +25,7 @@ function App() {
       );
 /*       Si el fetch nos devuelve tanto el status en true como un email guardamos los datos en localStorage
  */    } else {
-      if (fetch.data.status === true && fetch.data.email !== "") {
+      if (fetch.data.status == true && fetch.data.email !== "") {
         localStorage.setItem(
           "auth",
           JSON.stringify({
@@ -45,16 +45,16 @@ function App() {
     
     let data = JSON.parse(localStorage.getItem("auth"));
 
-    if (data.status === false) {
+    if (data.status == false) {
       let data = {
         email,
       };
 
       axios.post("/confirmuser", data).then((res) => setLink(res.data.link));
-    } else if (data.status === true && data.email === email) {
+    } else if (data.status == true && data.email == email) {
       alert("Ya has confirmado el usuario anteriormente");
     } else if (
-      (data.status === true) | (data.status === true) &&
+      (data.status == true) | (data.status == true) &&
       data.email !== email
     ) {
       let data = {
