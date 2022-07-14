@@ -21,11 +21,12 @@ const user = {
 
             dbo.collection("Usuarios").findOne({ email: email }, function (err, result) {
                 if (err) throw err;
-                ;
+                
                 if (result != null && result.pass == pass) {
                     res.json({
                         message: 'Logeado correctamente', result
                     });
+
 
                 } else {
                     res.json({
