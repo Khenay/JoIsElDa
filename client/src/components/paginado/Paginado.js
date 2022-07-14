@@ -6,16 +6,15 @@ import NavBar from '../navbar/Navbar'
 
 // Example items, to simulate fetching from another resources.
 
-var items
+//var items
 var items0
-var items1
+//var items1
 
 function Items({ currentItems }) {
 
   const [fecha, setFecha] = useState("No es posible mostrar la fecha");
   const [hora, setHora] = useState("No es posible mostrar la hora");
   const [descripcion, setDescripcion] = useState("No es posible mostrar la descripción");
-  const [dorsal, setDorsal] = useState("No es posible mostrar el dorsal")
   const [tarjeta, setTarjeta] = useState("No es posible mostrar el número de tarjeta");
 
   
@@ -36,11 +35,7 @@ function Items({ currentItems }) {
         localStorage.setItem('descripcion1', res.message[1].descripcion);
         localStorage.setItem('direccion1', res.message[1].ubicacion);
         localStorage.setItem('tipo1', res.message[1].tipo);
-        
-        setDorsal(res.message[0].dorsal)
-        setTarjeta(res.message[0].tarjeta)
-
-
+      
       })
 
   }, [])
@@ -100,13 +95,11 @@ function Items({ currentItems }) {
   </div>);
 
 
-  const [hora1, setHora1] = useState("2");
+  //const [hora1, setHora1] = useState("2");
 
   items0 = [card, tarjeta1];
 
-
-
-  items = [items0, items1]
+  //items = [items0, items1]
 
 
   return (
@@ -142,12 +135,12 @@ function PaginatedItems({ itemsPerPage }) {
     setCurrentItems(items0.slice(itemOffset, endOffset));
     
 
-    setPageCount(Math.ceil(items.length / itemsPerPage));
+    setPageCount(Math.ceil(items0.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
+    const newOffset = (event.selected * itemsPerPage) % items0.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
