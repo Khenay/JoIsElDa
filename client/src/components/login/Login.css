@@ -1,0 +1,58 @@
+.container {
+    height: 80vh;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardLog {
+    background: linear-gradient(90deg, #ffffff 0%, #0765a4 50%, #ffed30 100%);
+    padding: 2rem;
+    border-style: none;
+    border-radius: 1rem;
+    width: 20rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.logIn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+input {
+    text-align: center;
+    border-radius: .5rem;
+    border-style: none;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.btnLog {
+    border-radius: 1rem;
+    border-style: none;
+    width: 7rem;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: .5rem;
+    background-color: white;
+}
+
+.linkLog {
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#mensajeMal{
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    cursor: pointer;
+    font-weight: bold;
+    color: red;
+}

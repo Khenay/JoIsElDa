@@ -1,0 +1,77 @@
+.container-pago {
+    height: 100vh;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-pago{
+    background: linear-gradient(90deg, #ffffff 0%, #0765a4 50%, #ffed30 100%);
+    padding: 2rem;
+    border-style: none;
+    border-radius: 1rem;
+    width: 25rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    margin-bottom: 5rem;
+}
+
+.titularTarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1em;
+}
+
+.numTarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1em;
+}
+
+.caducidad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1em;
+}
+
+.codigo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1em;
+}
+
+.boton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.btnPago {
+    border-radius: 1rem;
+    border-style: none;
+    width: 7rem;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: .5rem;
+    background-color: white;
+}
+
+label{
+    display: flex;
+    justify-content: space-around;
+}
+
+h5 {
+    text-align: center;
+}

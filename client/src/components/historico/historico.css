@@ -1,0 +1,55 @@
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+#paginado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-hist{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(90deg, #ffffff 0%, #0765a4 50%, #ffed30 100%);
+    padding: 2rem;
+    border-style: none;
+    border-radius: 1rem;
+    width: 40rem;
+    height: 40vh;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.fecha{
+    display: flex;
+    flex-direction: row;
+}
+
+.hora{
+    display: flex;
+    flex-direction: row;    
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: row;
+}
+
+.dorsal {
+    display: flex;
+    flex-direction: row;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: row;
+}
