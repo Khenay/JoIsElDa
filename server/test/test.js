@@ -17,7 +17,7 @@ async function test() {
     await driver.findElement(By.xpath('//*[@id="mail"]')).sendKeys(correo, Key.RETURN);
     await driver.findElement(By.xpath('//*[@id="nick"]')).sendKeys(nick, Key.RETURN);
     await driver.findElement(By.xpath('//*[@id="pass"]')).sendKeys(pass, Key.RETURN);
-    await driver.findElement(By.xpath('//*[@id="button"]')).click();
+    await driver.findElement(By.xpath('//*[@id="buton"]')).click();
 
 
     //Cerramos el navegador

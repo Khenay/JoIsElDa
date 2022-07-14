@@ -54,12 +54,12 @@ const Registro = () => {
                 <div className="cardLog">
                     {message}
                     <div className="sign">
-                        <input type='text' placeholder='Introduce tu nombre' onChange={(e) => setName(e.target.value)} />
-                        <input type='text' placeholder='Introduce tus apellidos' onChange={(e) => setLastName(e.target.value)} />
-                        <input type='email' placeholder='Introduce tu email' onChange={(e) => setMail(e.target.value)} />
-                        <input type='text' placeholder='Introduce tu nombre de usuario' onChange={(e) => setNick(e.target.value)} />
-                        <input type='password' placeholder='Introduce tu contraseña' onChange={(e) => setPassword(e.target.value)} />
-                        <button class='btnRegistro' onClick={() => nuevoUsuario()}>Iniciar sesión</button>
+                        <input id='name' type='text' placeholder='Introduce tu nombre' onChange={(e) => setName(e.target.value)} />
+                        <input id='lastName' type='text' placeholder='Introduce tus apellidos' onChange={(e) => setLastName(e.target.value)} />
+                        <input id='mail' type='email' placeholder='Introduce tu email' onChange={(e) => setMail(e.target.value)} />
+                        <input id='nick' type='text' placeholder='Introduce tu nombre de usuario' onChange={(e) => setNick(e.target.value)} />
+                        <input id='pass' type='password' placeholder='Introduce tu contraseña' onChange={(e) => setPassword(e.target.value)} />
+                        <button id='buton' class='btnRegistro' onClick={() => nuevoUsuario()}>Iniciar sesión</button>
                     </div>
                 </div>
             </div>
