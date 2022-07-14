@@ -54,7 +54,6 @@ const Actualizar = () => {
         <div>
 
             <div className="containerActualizar">
-                <div>Historial</div>
                 <div className="cardActualizar">
                     {messageEmail}
                     <input type='email' placeholder="email" onChange={(e) => setEmail(e.target.value)}></input>

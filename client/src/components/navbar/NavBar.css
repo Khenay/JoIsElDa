@@ -26,6 +26,13 @@ header {
     cursor: pointer;
 }
 
+.navUser {
+    display: flex;
+    justify-content: space-around;
+    width: 20rem;
+}
+
+
 nav {
     display: flex;
     flex-direction: row;
@@ -42,4 +49,14 @@ nav {
     cursor: pointer;
     text-decoration: none;
     color: black;
+}
+
+.btnUser {
+    border-radius: 1rem;
+    border-style: none;
+    width: 5rem;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: .5rem;
+    background-color: white;
 }

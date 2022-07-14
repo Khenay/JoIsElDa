@@ -24,11 +24,11 @@ const NavBar = () => {
                     <Link className="linkGuay" to={"/"}>Guayota</Link>
                 </header>
                 <nav>
-                    {nombreUsuario ? <div><Link className="linkNav" to={"/historico"}>Historico</Link>
+                    {nombreUsuario ? <div className="navUser"><Link className="linkNav" to={"/historico"}>Historico</Link>
                         <Link className="linkNav" to={"/cuenta"}>Cuenta</Link>
                             {/* <button id="boton" onClick={erase()}>Salir</button> */}
-                            <button onClick={() => {borrar()}}>Salir</button>
-                                </div> : <div>
+                            <button className="btnUser" onClick={() => {borrar()}}>Salir</button>
+                                </div> : <div className="navUser">
                                     <Link className="linkNav" to={"/registro"}>Registro</Link>
                                         <Link className="linkNav" to={"/login"}>Iniciar sesión</Link></div>}          
                     {/* <Link className="linkNav" to={"#"}>Salir</Link> */}

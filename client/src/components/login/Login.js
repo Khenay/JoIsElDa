@@ -52,7 +52,7 @@ const Login = () => {
                     <div className='logIn'>
                         <input type='email' placeholder='email' onChange={(e) => setEmail(e.target.value)} />
                         <input type='password' placeholder='contraseña' onChange={(e) => setPassword(e.target.value)} />
-                        <button class='btn' onClick={() => login()}>Iniciar sesión</button>
+                        <button class='btnLog' onClick={() => login()}>Iniciar sesión</button>
                         {message ? <p id="mensajeMal">{message}</p> : ''}
                         <Link className="linkNav linkLog" to={"/registro"}>Aún no estás registrado? <br></br>Pincha aquí</Link>
                         <Link className="linkNav linkLog" to={"/registro"}>Olvidé Contraseña</Link>
