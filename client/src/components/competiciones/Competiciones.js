@@ -50,7 +50,7 @@ const Competiciones = () => {
                         <p>Fecha: {e.fecha}</p>
                         <p>Hora: {e.hora}h</p>
                         <p>Precio de inscripción: {e.precio}</p>
-                        <p>Nº máximo de participantes: {e.participantes}</p>
+                        <p>Nº máximo de participantes: {e.participantesMax}</p>
                         <button id={e._id} className="btnInscripcion" onClick={(e) => getBtnId(e.target.id)}>Inscribete</button>
                     </div>) : ""}
             </div>
