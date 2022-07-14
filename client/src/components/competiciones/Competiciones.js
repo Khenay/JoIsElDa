@@ -5,6 +5,7 @@ const Competiciones = () => {
 
     const [data, setData] = useState('');
     const [id, setId] = useState("");
+    const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
 
@@ -27,18 +28,24 @@ const Competiciones = () => {
     //         headers: { "Content-Type": "application/json" },
     //         body: JSON.stringify({ id: id }),
     //     };
-
-        fetch("id")
+        if(!localStorage.getItem('nombre')) {
+            setMessage("Debes de estar registrado para poder inscribirte")
+        } else {
+            fetch("id")
             .then((response) => response.json())
             .then((res) => {
                 console.log(res)
                 navigate("/pago")
             });
+        }
+
+        
     }
 
     return (
         <div>
             <h1>Competiciones</h1>
+            <h4>{message}</h4>
             <div className="competiciones">
                 {data ? data.map((e, i) =>
                     <div key={i} className="containerCompeticiones">
